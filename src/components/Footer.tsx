@@ -33,7 +33,7 @@ export default function Footer() {
             className="text-muted-foreground hover:text-foreground transition-colors"
             aria-label="Instagram"
           >
-            <Instagram className="w-5 h-5" />
+            <InstagramIcon className="w-5 h-5" />
           </a>
           <a
             href="https://tiktok.com"
