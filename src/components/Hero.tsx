@@ -27,7 +27,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-4 text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground"
+          className="mt-4 text-sm md:text-base uppercase tracking-[0.3em] text-foreground/90"
         >
           Artista visual venezolana
         </motion.p>
