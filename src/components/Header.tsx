@@ -25,8 +25,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/50"
-          : "bg-transparent"
+          ? "bg-background/90 backdrop-blur-md border-b border-border/50"
+          : "bg-gradient-to-b from-background/60 to-transparent backdrop-blur-[2px]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
@@ -42,7 +42,7 @@ export default function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground transition-colors"
             >
               {l.label}
             </a>
@@ -67,7 +67,7 @@ export default function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm uppercase tracking-[0.15em] text-foreground/80 hover:text-foreground transition-colors"
             >
               {l.label}
             </a>
