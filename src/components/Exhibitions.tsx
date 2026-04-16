@@ -49,8 +49,8 @@ export default function Exhibitions() {
               }`}
             >
               {/* Dot */}
-              <div className={`absolute top-1 w-2.5 h-2.5 rounded-full bg-foreground/30 left-[11px] md:left-auto ${
-                i % 2 === 0 ? "md:right-[-5px]" : "md:left-[-5px]"
+              <div className={`absolute top-1 w-2.5 h-2.5 rounded-full bg-foreground/30 left-[11px] ${
+                i % 2 === 0 ? "md:left-auto md:right-[-5px]" : "md:hidden"
               }`} />
 
               <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground mb-1">
