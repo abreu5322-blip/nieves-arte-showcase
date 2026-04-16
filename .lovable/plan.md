@@ -1,17 +1,36 @@
 
-## Problema
+Perdón: revisé el componente y sí entiendo por qué sentiste que “no cambió nada”.
 
-En la sección "Exposiciones & CV", los items del lado derecho (impares) usan `md:pl-12` (padding-left de 3rem). El bullet point está en `md:left-[-5px]` respecto al contenedor, así que el texto queda muy cerca / encima del dot, dificultando la lectura.
+## Qué pasó realmente
 
-## Solución
+En `src/components/Exhibitions.tsx` el bloque derecho ya tiene `md:pl-16`, pero ese mismo contenedor también arrastra `md:pl-0` desde la clase base:
 
-En `src/components/Exhibitions.tsx` (línea 48), aumentar el padding izquierdo de los items del lado derecho de `md:pl-12` a `md:pl-16` (o `md:pl-20`) para separar el texto del bullet vertical.
+```text
+relative pl-12 md:pl-0 md:w-1/2 ...
+```
 
-Por simetría, también aumentar `md:pr-12` a `md:pr-16` en los items del lado izquierdo, manteniendo el balance visual respecto a la línea central.
+y luego, solo para los items derechos, se añade:
 
-## Cambio
+```text
+md:ml-auto md:pl-16
+```
 
-- Línea 48: `md:pr-12 md:text-right` → `md:pr-16 md:text-right`
-- Línea 48: `md:ml-auto md:pl-12` → `md:ml-auto md:pl-16`
+Ese enfoque mezcla utilidades de padding que compiten entre sí y, además, el salto de `12` a `16` era demasiado pequeño para que el cambio se viera claramente.
 
-Resultado: el texto se aleja unos píxeles más de la línea central y los bullets, mejorando la legibilidad sin romper la estética de timeline.
+## Plan corregido
+
+1. En `src/components/Exhibitions.tsx`, separar las clases de desktop por lado en vez de compartir `md:pl-0`.
+   - Izquierda: mantener el texto pegado a su lado con `md:pl-0 md:pr-16 md:text-right`
+   - Derecha: darle espacio real con `md:ml-auto md:pl-20` o `md:pl-24`
+
+2. Dejar de depender del “mismo contenedor para ambos lados” con padding condicional ambiguo.
+   - Así el lado derecho tendrá un desplazamiento claro y visible.
+   - El lado izquierdo seguirá equilibrado visualmente.
+
+3. Si al aplicar eso el bullet aún queda demasiado cerca visualmente, mover el dot 1–2 px más hacia el centro para rematar el ajuste fino, sin tocar la estructura general.
+
+## Resultado esperado
+
+- El texto del lado derecho se verá claramente separado del bullet.
+- El cambio será visible de verdad, no un microajuste casi imperceptible.
+- La timeline conservará la estética actual, pero con mejor legibilidad.
