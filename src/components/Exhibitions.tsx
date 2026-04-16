@@ -45,7 +45,7 @@ export default function Exhibitions() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
               className={`relative pl-12 md:pl-0 md:w-1/2 ${
-                i % 2 === 0 ? "md:pr-12 md:text-right" : "md:ml-auto md:pl-12"
+                i % 2 === 0 ? "md:pr-16 md:text-right" : "md:ml-auto md:pl-16"
               }`}
             >
               {/* Dot */}
