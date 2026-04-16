@@ -1,28 +1,17 @@
 
+## Problema
 
-## Problema identificado
+En la sección "Exposiciones & CV", los items del lado derecho (impares) usan `md:pl-12` (padding-left de 3rem). El bullet point está en `md:left-[-5px]` respecto al contenedor, así que el texto queda muy cerca / encima del dot, dificultando la lectura.
 
-El texto "Artista visual venezolana" en el Hero usa `text-muted-foreground` (línea 30 de `Hero.tsx`), que tiene estos valores:
-- Modo claro: `0 0% 35%` (gris medio oscuro)
-- Modo oscuro: `0 0% 65%` (gris medio claro)
+## Solución
 
-Este texto aparece sobre una imagen de fondo con un overlay translúcido (`bg-background/30` en claro, `bg-background/50` en oscuro), lo que crea un contraste insuficiente y dificulta la lectura.
+En `src/components/Exhibitions.tsx` (línea 48), aumentar el padding izquierdo de los items del lado derecho de `md:pl-12` a `md:pl-16` (o `md:pl-20`) para separar el texto del bullet vertical.
 
-## Solución propuesta
+Por simetría, también aumentar `md:pr-12` a `md:pr-16` en los items del lado izquierdo, manteniendo el balance visual respecto a la línea central.
 
-Cambiar la clase del tagline en `Hero.tsx` de `text-muted-foreground` a una clase con mejor contraste. Opciones:
+## Cambio
 
-1. **`text-foreground`** - Contraste máximo (negro en claro, blanco hueso en oscuro)
-2. **`text-foreground/90`** - Contraste alto pero ligeramente suavizado (recomendado)
-3. **`text-foreground/80`** - Similar al menú principal
+- Línea 48: `md:pr-12 md:text-right` → `md:pr-16 md:text-right`
+- Línea 48: `md:ml-auto md:pl-12` → `md:ml-auto md:pl-16`
 
-Recomiendo `text-foreground/90` porque mantiene algo de jerarquía visual respecto al título "Nieves" pero garantiza legibilidad sobre la imagen.
-
-## Cambios técnicos
-
-**Archivo:** `src/components/Hero.tsx`  
-**Línea:** 30  
-**Cambio:** Reemplazar `text-muted-foreground` por `text-foreground/90`
-
-Esto asegura contraste WCAG AA en ambos modos (claro y oscuro) sin necesidad de modificar las variables CSS globales.
-
+Resultado: el texto se aleja unos píxeles más de la línea central y los bullets, mejorando la legibilidad sin romper la estética de timeline.
