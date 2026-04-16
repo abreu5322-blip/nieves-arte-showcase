@@ -25,7 +25,7 @@ export const artworks: Artwork[] = [
   { id: 1, title: "Tierra Encendida", year: 2024, technique: "Óleo sobre lienzo", dimensions: "120 × 150 cm", series: "Raíces", image: obra1 },
   { id: 2, title: "Corriente Azul", year: 2024, technique: "Acrílico y técnica mixta", dimensions: "100 × 130 cm", series: "Agua", image: obra2 },
   { id: 3, title: "Estructura del Silencio", year: 2023, technique: "Acrílico sobre lienzo", dimensions: "100 × 100 cm", series: "Geometrías", image: obra3 },
-  { id: 4, title: "Gesto Rojo", year: 2023, technique: "Tinta y acrílico", dimensions: "150 × 150 cm", series: "Impulso", image: obra4 },
+  { id: 4, title: "Una Mirada Eterna", year: 2026, technique: "Óleo sobre madera", dimensions: "90 × 60 cm", series: "Impulso", image: obra4 },
   { id: 5, title: "Neblina Rosa", year: 2023, technique: "Técnica mixta", dimensions: "90 × 120 cm", series: "Agua", image: obra5 },
   { id: 6, title: "Sol Interior", year: 2022, technique: "Óleo y pigmentos", dimensions: "120 × 150 cm", series: "Raíces", image: obra6 },
   { id: 7, title: "Sombra y Luz", year: 2022, technique: "Tinta sobre papel", dimensions: "80 × 100 cm", series: "Impulso", image: obra7 },
