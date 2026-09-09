@@ -12,14 +12,43 @@ const subjects = [
 export default function Contact() {
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    
+    // Configuración de Web3Forms
+    formData.append("access_key", "464ea2cc-a2be-4bb8-adce-4daa1f439c77");
+    
+    // Título del correo solicitado
+    formData.append("subject", `"${name}" está interesado en tu trabajo`);
+    
+    // Responder directamente al correo del visitante
+    formData.append("replyto", formData.get("email") as string);
+    formData.append("from_name", "Web de Nieves");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Mensaje enviado con éxito. Nos pondremos en contacto pronto.");
+        form.reset();
+      } else {
+        toast.error("Error al enviar el mensaje. Inténtalo más tarde.");
+      }
+    } catch (error) {
+      toast.error("Error de conexión. Inténtalo más tarde.");
+    } finally {
       setSending(false);
-      toast.success("Mensaje enviado. Nos pondremos en contacto pronto.");
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+    }
   };
 
   return (
@@ -48,6 +77,7 @@ export default function Contact() {
             <label className="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">Nombre</label>
             <input
               type="text"
+              name="name"
               required
               className="w-full bg-transparent border-b border-border py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors"
               placeholder="Tu nombre"
@@ -57,6 +87,7 @@ export default function Contact() {
             <label className="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">Email</label>
             <input
               type="email"
+              name="email"
               required
               className="w-full bg-transparent border-b border-border py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors"
               placeholder="tu@email.com"
@@ -67,6 +98,7 @@ export default function Contact() {
         <div>
           <label className="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">Asunto</label>
           <select
+            name="category"
             required
             className="w-full bg-transparent border-b border-border py-3 text-sm text-foreground focus:outline-none focus:border-foreground transition-colors appearance-none"
           >
@@ -80,6 +112,7 @@ export default function Contact() {
         <div>
           <label className="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">Mensaje</label>
           <textarea
+            name="message"
             required
             rows={5}
             className="w-full bg-transparent border-b border-border py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors resize-none"

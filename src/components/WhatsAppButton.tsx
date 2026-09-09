@@ -34,7 +34,7 @@ export default function WhatsAppButton() {
 
       {/* Botón WhatsApp */}
       <a
-        href="https://wa.me/584121234567"
+        href="https://wa.me/584261180251"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
