@@ -41,7 +41,7 @@ export default function LightboxModal({ artwork, onClose }: Props) {
             <p><span className="uppercase tracking-wider text-xs text-foreground/60">Año</span><br />{artwork.year}</p>
             <p><span className="uppercase tracking-wider text-xs text-foreground/60">Técnica</span><br />{artwork.technique}</p>
             <p><span className="uppercase tracking-wider text-xs text-foreground/60">Dimensiones</span><br />{artwork.dimensions}</p>
-            <p><span className="uppercase tracking-wider text-xs text-foreground/60">Serie</span><br />{artwork.series}</p>
+            {artwork.note && <p><span className="uppercase tracking-wider text-xs text-foreground/60">Nota</span><br />{artwork.note}</p>}
           </div>
           <a
             href={`#contacto`}

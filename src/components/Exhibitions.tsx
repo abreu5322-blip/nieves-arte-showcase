@@ -1,68 +1,88 @@
 import { motion } from "framer-motion";
 
-const timeline = [
-  { year: "2024", type: "Individual", title: "Tierra Encendida", venue: "Galería Carmen Araujo Arte, Caracas" },
-  { year: "2024", type: "Colectiva", title: "Nuevas Voces Latinoamericanas", venue: "ARCO Madrid, España" },
-  { year: "2023", type: "Individual", title: "Impulso", venue: "Galería Freites, Caracas" },
-  { year: "2023", type: "Colectiva", title: "Arte Contemporáneo Venezolano", venue: "Museo de Arte Contemporáneo de Bogotá" },
-  { year: "2022", type: "Individual", title: "Geometrías del Silencio", venue: "Espacio Monitor, Ciudad de México" },
-  { year: "2022", type: "Premio", title: "Mención Honorífica", venue: "Salón Nacional de Arte Joven, Venezuela" },
-  { year: "2021", type: "Colectiva", title: "Diálogos del Sur", venue: "Galería Henrique Faria, Nueva York" },
-  { year: "2021", type: "Formación", title: "Residencia artística", venue: "Fundación Botín, Santander, España" },
-  { year: "2020", type: "Individual", title: "Raíces", venue: "Centro de Arte Los Galpones, Caracas" },
-  { year: "2019", type: "Formación", title: "Licenciatura en Artes Plásticas", venue: "Universidad Central de Venezuela" },
-];
-
-const typeColors: Record<string, string> = {
-  Individual: "text-foreground",
-  Colectiva: "text-muted-foreground",
-  Premio: "text-foreground",
-  Formación: "text-muted-foreground",
-};
-
 export default function Exhibitions() {
   return (
-    <section id="exposiciones" className="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
+    <section id="exposiciones" className="py-24 md:py-32 px-6 md:px-12 max-w-5xl mx-auto">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-serif text-4xl md:text-5xl font-light text-center mb-16"
+        className="font-serif text-4xl md:text-5xl font-light text-center mb-20"
       >
         Exposiciones & CV
       </motion.h2>
 
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border" />
+      <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="space-y-12"
+        >
+          <div>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-foreground mb-6 border-b border-border pb-2">
+              Exposiciones Individuales
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <p className="font-serif text-lg text-foreground">Exposición individual</p>
+                <p className="text-sm text-muted-foreground">2023 · Restaurante Dharma, El Hatillo, Caracas, Venezuela</p>
+              </div>
+            </div>
+          </div>
 
-        <div className="space-y-12">
-          {timeline.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className={`relative pl-12 md:w-1/2 ${
-                i % 2 === 0 ? "md:pl-0 md:pr-20 md:text-right" : "md:ml-auto md:pr-0 md:pl-20"
-              }`}
-            >
-              {/* Dot */}
-              <div className={`absolute top-1 w-2.5 h-2.5 rounded-full bg-foreground/30 left-[11px] ${
-                i % 2 === 0 ? "md:left-auto md:right-[-5px]" : "md:hidden"
-              }`} />
+          <div>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-foreground mb-6 border-b border-border pb-2">
+              Exposiciones Colectivas
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <p className="font-serif text-lg text-foreground">Salón Elsa Morales</p>
+                <p className="text-sm text-muted-foreground">2025 · Galería de Arte Nacional, Caracas, Venezuela</p>
+              </div>
+              <div>
+                <p className="font-serif text-lg text-foreground">Salón Arturo Michelena</p>
+                <p className="text-sm text-muted-foreground">2025 · Museo de la Cultura, Carabobo, Venezuela</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
-              <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground mb-1">
-                {item.year} · {item.type}
-              </p>
-              <p className={`font-serif text-xl font-light ${typeColors[item.type] || "text-foreground"}`}>
-                {item.title}
-              </p>
-              <p className="text-sm text-muted-foreground mt-1">{item.venue}</p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="space-y-12"
+        >
+          <div>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-foreground mb-6 border-b border-border pb-2">
+              Distinciones
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <p className="font-serif text-lg text-foreground">Seleccionada - Salón Elsa Morales</p>
+                <p className="text-sm text-muted-foreground">2025 · Galería de Arte Nacional, Caracas</p>
+              </div>
+              <div>
+                <p className="font-serif text-lg text-foreground">Seleccionada - Salón Arturo Michelena</p>
+                <p className="text-sm text-muted-foreground">2025 · Museo de la Cultura, Carabobo</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-foreground mb-6 border-b border-border pb-2">
+              Formación
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <p className="font-serif text-lg text-foreground">TSU en Gerencia Financiera</p>
+                <p className="text-sm text-muted-foreground">Instituto Universitario de Profesiones Gerenciales, Venezuela</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

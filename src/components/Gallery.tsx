@@ -85,7 +85,7 @@ export default function Gallery() {
                 className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-background/95 backdrop-blur-sm translate-y-full group-hover:translate-y-0 transition-transform duration-500 border-t border-border/50">
                 <p className="font-serif text-lg text-foreground">{artwork.title}</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">{artwork.year} · {artwork.technique}</p>
               </div>

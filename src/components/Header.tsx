@@ -20,9 +20,12 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <a href="#inicio" className="font-serif text-2xl md:text-3xl font-light tracking-wide text-foreground">
-          Nieves
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-foreground/40 ml-1 mb-2" />
+        <a href="#inicio" className="flex items-center gap-3 font-serif text-2xl md:text-3xl font-light tracking-wide text-foreground">
+          <img src="/logo-nieves.png" alt="Logo Nieves" className="h-7 md:h-8 w-auto object-contain" />
+          <span>
+            Nieves
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-foreground/40 ml-1 mb-2" />
+          </span>
         </a>
 
         {/* Desktop nav */}

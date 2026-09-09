@@ -10,8 +10,17 @@ function InstagramIcon({ className }: { className?: string }) {
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.52a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.17a8.16 8.16 0 004.76 1.53v-3.5a4.84 4.84 0 01-1-.51z" />
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a3 3 0 0 1-3 3z" />
+    </svg>
+  );
+}
+
+function YoutubeIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z" />
+      <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
     </svg>
   );
 }
@@ -20,14 +29,17 @@ export default function Footer() {
   return (
     <footer className="border-t border-border py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <a href="#inicio" className="font-serif text-xl font-light text-foreground tracking-wide">
-          Nieves
-          <span className="inline-block w-1 h-1 rounded-full bg-foreground/40 ml-0.5 mb-1.5" />
+        <a href="#inicio" className="flex items-center gap-3 font-serif text-xl font-light text-foreground tracking-wide">
+          <img src="/logo-nieves.png" alt="Logo Nieves" className="h-6 w-auto object-contain" />
+          <span>
+            Nieves
+            <span className="inline-block w-1 h-1 rounded-full bg-foreground/40 ml-0.5 mb-1.5" />
+          </span>
         </a>
 
         <div className="flex items-center gap-6">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/lisettnievesart"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -36,7 +48,7 @@ export default function Footer() {
             <InstagramIcon className="w-5 h-5" />
           </a>
           <a
-            href="https://tiktok.com"
+            href="https://www.tiktok.com/@artnieveslis"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -44,7 +56,15 @@ export default function Footer() {
           >
             <TikTokIcon className="w-5 h-5" />
           </a>
-          <span className="text-muted-foreground text-xs">contacto@nieves.art</span>
+          <a
+            href="https://www.youtube.com/@artesnieves"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="YouTube"
+          >
+            <YoutubeIcon className="w-5 h-5" />
+          </a>
         </div>
 
         <p className="text-xs text-muted-foreground">

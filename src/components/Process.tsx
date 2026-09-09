@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import estudio1 from "@/assets/estudio-1.jpg";
-import estudio2 from "@/assets/estudio-2.jpg";
+import estudio1 from "@/assets/Expodharma.jpg";
+import estudio2 from "@/assets/Nievesyluto.jpg";
 
 export default function Process() {
   return (
@@ -14,7 +14,7 @@ export default function Process() {
         Proceso Creativo
       </motion.h2>
 
-      <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+      <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
         {/* Text block */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,15 +23,11 @@ export default function Process() {
           className="md:col-span-5 space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed"
         >
           <p>
-            El proceso de Nieves comienza siempre con la observación. Antes de tocar el lienzo, 
-            pasa semanas recopilando impresiones: fotografías de texturas naturales, paletas de 
-            color encontradas en el paisaje cotidiano, fragmentos de conversaciones que se 
-            transforman en ritmos visuales.
-          </p>
-          <p>
-            En su estudio, la artista trabaja simultáneamente en varias piezas, permitiendo que 
-            cada una dialogue con las demás. Utiliza capas sucesivas de pintura, dejando que el 
-            azar y la intuición guíen el proceso tanto como la intención.
+            Para Nieves, las ideas no se buscan: aparecen. Una escena de una película, una situación 
+            cotidiana o una imagen fugaz pueden convertirse en el punto de partida de una obra. Desde 
+            ese primer destello, el proceso es todo lo contrario a impulsivo: cada idea se anota, se 
+            elabora y se deja madurar durante semanas, meses o, en ocasiones, años enteros antes de 
+            que el pincel toque el lienzo.
           </p>
         </motion.div>
 
@@ -76,17 +72,12 @@ export default function Process() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="md:col-span-5 space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed"
+          className="md:col-span-5 space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed flex items-center"
         >
           <p>
-            La materialidad es central en su trabajo. Experimenta constantemente con pigmentos 
-            naturales, arenas, resinas y pan de oro, buscando que la superficie de cada obra tenga 
-            una presencia física que invite a la contemplación cercana.
-          </p>
-          <p>
-            Sus influencias van desde los maestros del informalismo europeo hasta las tradiciones 
-            artesanales venezolanas, pasando por la poesía y la música. El resultado es un lenguaje 
-            visual que es a la vez íntimo y expansivo.
+            Su técnica principal es el óleo, aunque también trabaja con acrílicos, acuarelas y lápices 
+            de color. No hay fórmulas fijas: cada obra encuentra su propio ritmo, su propia escala y 
+            su propio momento.
           </p>
         </motion.div>
       </div>
