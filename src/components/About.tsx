@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import retrato from "@/assets/retrato-artista.jpg";
+import retrato from "@/assets/Nievesyluto.jpg";
 
 export default function About() {
   return (
