@@ -32,10 +32,10 @@ export default function LightboxModal({ artwork, onClose }: Props) {
           <img
             src={artwork.image}
             alt={artwork.title}
-            className="max-w-full max-h-[70vh] object-contain"
+            className="max-w-full max-h-[45vh] md:max-h-[70vh] object-contain"
           />
         </div>
-        <div className="md:w-72 flex flex-col justify-center gap-4">
+        <div className="md:w-72 flex flex-col justify-center gap-4 shrink-0 overflow-y-auto">
           <h3 className="font-serif text-3xl font-light">{artwork.title}</h3>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p><span className="uppercase tracking-wider text-xs text-foreground/60">Año</span><br />{artwork.year}</p>
