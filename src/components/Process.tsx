@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import estudio1 from "@/assets/Expodharma.jpg";
-import estudio2 from "@/assets/Nievesyluto.jpg";
 
 export default function Process() {
   return (
@@ -20,7 +19,7 @@ export default function Process() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="md:col-span-5 space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed"
+          className="md:col-span-5 space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed flex flex-col justify-center"
         >
           <p>
             Para Nieves, las ideas no se buscan: aparecen. Una escena de una película, una situación 
@@ -28,6 +27,11 @@ export default function Process() {
             ese primer destello, el proceso es todo lo contrario a impulsivo: cada idea se anota, se 
             elabora y se deja madurar durante semanas, meses o, en ocasiones, años enteros antes de 
             que el pincel toque el lienzo.
+          </p>
+          <p>
+            Su técnica principal es el óleo, aunque también trabaja con acrílicos, acuarelas y lápices 
+            de color. No hay fórmulas fijas: cada obra encuentra su propio ritmo, su propia escala y 
+            su propio momento.
           </p>
         </motion.div>
 
@@ -47,38 +51,6 @@ export default function Process() {
             width={1024}
             height={700}
           />
-        </motion.div>
-
-        {/* Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="md:col-span-7"
-        >
-          <img
-            src={estudio2}
-            alt="Proceso de pintura"
-            loading="lazy"
-            className="w-full"
-            width={1024}
-            height={700}
-          />
-        </motion.div>
-
-        {/* Text block */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15 }}
-          className="md:col-span-5 space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed flex items-center"
-        >
-          <p>
-            Su técnica principal es el óleo, aunque también trabaja con acrílicos, acuarelas y lápices 
-            de color. No hay fórmulas fijas: cada obra encuentra su propio ritmo, su propia escala y 
-            su propio momento.
-          </p>
         </motion.div>
       </div>
     </section>
