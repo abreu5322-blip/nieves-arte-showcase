@@ -82,6 +82,8 @@ export default function Contact() {
         onSubmit={handleSubmit}
         className="space-y-6"
       >
+        {/* Honeypot anti-spam: invisible para humanos, los bots lo rellenan y son rechazados */}
+        <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
         <div className="grid sm:grid-cols-2 gap-6">
           <div>
             <label className="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">Nombre</label>
