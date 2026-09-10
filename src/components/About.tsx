@@ -67,8 +67,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
         >
           <blockquote className="font-serif text-2xl md:text-4xl italic font-light text-foreground mb-6 leading-snug">
-            "Mi obra explora la elegancia contemporánea y el misterio de los sueños.<br className="hidden md:block" /> 
-            A través de atmósferas limpias y elementos surrealistas."
+            "Mi obra explora la elegancia contemporánea y el misterio de los sueños a través de atmósferas limpias y elementos surrealistas."
           </blockquote>
           <p className="text-sm uppercase tracking-widest text-muted-foreground">— Nieves</p>
         </motion.div>
