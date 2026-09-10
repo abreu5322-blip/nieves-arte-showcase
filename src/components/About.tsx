@@ -2,8 +2,20 @@ import { motion } from "framer-motion";
 import retrato from "@/assets/Nievesyluto.jpg";
 
 export default function About() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nieves.vercel.app/#sobre"
+    },
+    "name": "Sobre Nieves",
+    "description": "Biografía de Lisett Illiana Nieves de Tovar, artista visual venezolana contemporánea."
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section id="sobre" className="pt-24 md:pt-32 pb-16 px-6 md:px-12 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <motion.div

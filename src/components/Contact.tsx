@@ -13,6 +13,14 @@ const subjects = [
 export default function Contact() {
   const [sending, setSending] = useState(false);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto Nieves",
+    "description": "Formulario de contacto oficial para consultas sobre obras de arte y exposiciones.",
+    "url": "https://nieves.vercel.app/#contacto"
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
@@ -54,6 +62,7 @@ export default function Contact() {
 
   return (
     <section id="contacto" className="py-24 md:py-32 px-6 md:px-12 max-w-2xl mx-auto">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

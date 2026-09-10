@@ -14,8 +14,24 @@ export default function Gallery() {
     return true;
   });
 
+  const schemas = artworks.map((artwork) => ({
+    "@context": "https://schema.org",
+    "@type": "VisualArtwork",
+    "name": artwork.title,
+    "image": `https://nieves.vercel.app${artwork.image}`,
+    "creator": {
+      "@type": "Person",
+      "name": "Nieves"
+    },
+    "dateCreated": artwork.year.toString(),
+    "artMedium": artwork.technique,
+    "artform": "Painting",
+    "description": `${artwork.title} - ${artwork.technique}, ${artwork.year}`
+  }));
+
   return (
     <section id="obra" className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
