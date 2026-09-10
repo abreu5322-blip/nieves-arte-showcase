@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
+import { ChevronDown } from "lucide-react";
 
 const subjects = [
   "Consulta general",
@@ -93,20 +94,31 @@ export default function Contact() {
               placeholder="tu@email.com"
             />
           </div>
-        </div>
-
-        <div>
-          <label className="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">Asunto</label>
-          <select
-            name="category"
-            required
-            className="w-full bg-transparent border-b border-border py-3 text-sm text-foreground focus:outline-none focus:border-foreground transition-colors appearance-none"
-          >
-            <option value="" className="bg-background">Seleccionar</option>
-            {subjects.map((s) => (
-              <option key={s} value={s} className="bg-background">{s}</option>
-            ))}
-          </select>
+          <div>
+            <label className="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">Teléfono</label>
+            <input
+              type="tel"
+              name="phone"
+              className="w-full bg-transparent border-b border-border py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors"
+              placeholder="Tu número (opcional)"
+            />
+          </div>
+          <div>
+            <label className="block text-xs uppercase tracking-[0.15em] text-muted-foreground mb-2">Asunto</label>
+            <div className="relative">
+              <select
+                name="category"
+                required
+                className="w-full bg-transparent border-b border-border py-3 text-sm text-foreground focus:outline-none focus:border-foreground transition-colors appearance-none cursor-pointer pr-10"
+              >
+                <option value="" className="bg-background">Seleccionar</option>
+                {subjects.map((s) => (
+                  <option key={s} value={s} className="bg-background">{s}</option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+            </div>
+          </div>
         </div>
 
         <div>
