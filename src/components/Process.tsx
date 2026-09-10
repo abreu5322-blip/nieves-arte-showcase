@@ -44,7 +44,7 @@ export default function Process() {
           className="md:col-span-7"
         >
           <img
-            src={estudio1}
+            src="/assets/Expodharma.jpg"
             alt="Estudio de Nieves"
             loading="lazy"
             className="w-full"

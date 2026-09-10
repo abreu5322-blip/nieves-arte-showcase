@@ -25,7 +25,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <img
-              src={retrato}
+              src="/assets/Nievesyluto.jpg"
               alt="Retrato de Nieves"
               loading="lazy"
               className="w-full max-w-md mx-auto"
