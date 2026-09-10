@@ -5,6 +5,9 @@ import "@/index.css"
 export const metadata: Metadata = {
   title: 'Nieves — Artista Visual Venezolana | Arte Contemporáneo',
   description: 'Portafolio oficial de Nieves, artista plástica venezolana. Obra contemporánea, exposiciones y contacto para coleccionistas y galerías.',
+  icons: {
+    icon: '/logo-nieves.png',
+  },
 }
 
 export default function RootLayout({
