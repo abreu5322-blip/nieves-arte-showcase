@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import heroImg from "@/assets/hero-obra.jpg";
 
 export default function Hero() {
   return (
     <section id="inicio" className="relative h-screen w-full overflow-hidden">
       <img
-        src={heroImg}
+        src="/P0028.jpg"
         alt="Obra destacada de Nieves"
         className="absolute inset-0 w-full h-full object-cover"
         width={1920}
