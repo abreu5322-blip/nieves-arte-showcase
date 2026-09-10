@@ -47,7 +47,7 @@ export default function About() {
               <p>
                 Su técnica principal es la pintura al óleo, aunque también trabaja con acrílicos, acuarelas 
                 y lápices de color. Entre sus referentes visuales se encuentra 'El jardín de las delicias' 
-                de Hieronymus Bosch.
+                de El Bosco, así como otros grandes artistas como Goya, Velázquez, Klimt, entre otros.
               </p>
               <p>
                 En 2025 fue seleccionada para dos de los salones más reconocidos del país: el Salón Arturo 
