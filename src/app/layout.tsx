@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <head>
+    <html lang="es" suppressHydrationWarning>
+      <body className="min-h-screen bg-background font-sans antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
@@ -30,8 +30,6 @@ export default function RootLayout({
             "https://www.youtube.com/@artesnieves"
           ]
         }) }} />
-      </head>
-      <body className="min-h-screen bg-background font-sans antialiased">
         <Providers>
           {children}
         </Providers>
