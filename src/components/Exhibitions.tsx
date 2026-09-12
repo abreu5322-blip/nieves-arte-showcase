@@ -67,12 +67,10 @@ export default function Exhibitions() {
             </h3>
             <div className="space-y-12">
               <div className="relative">
-                <div className="absolute top-2 -left-12 md:-left-12 lg:-left-20 w-[7px] h-[7px] bg-foreground rounded-full -translate-x-[0.5px] md:-translate-x-[3.5px]" />
                 <p className="font-serif text-lg text-foreground">Seleccionada - Salón Elsa Morales</p>
                 <p className="text-sm text-muted-foreground mt-1">2025 · Galería de Arte Nacional, Caracas</p>
               </div>
               <div className="relative">
-                <div className="absolute top-2 -left-12 md:-left-12 lg:-left-20 w-[7px] h-[7px] bg-foreground rounded-full -translate-x-[0.5px] md:-translate-x-[3.5px]" />
                 <p className="font-serif text-lg text-foreground">Seleccionada - Salón Arturo Michelena</p>
                 <p className="text-sm text-muted-foreground mt-1">2025 · Museo de la Cultura, Carabobo</p>
               </div>
