@@ -53,7 +53,7 @@ export default function Exhibitions() {
           </div>
         </motion.div>
 
-        {/* Right side: Formación y Distinciones */}
+        {/* Right side: Distinciones */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,18 +63,6 @@ export default function Exhibitions() {
         >
           <div>
             <h3 className="font-bold text-sm uppercase tracking-[0.2em] text-foreground mb-12 relative">
-              Formación
-            </h3>
-            <div className="space-y-12">
-              <div className="relative">
-                <p className="font-serif text-lg text-foreground">TSU en Gerencia Financiera</p>
-                <p className="text-sm text-muted-foreground mt-1">Instituto Universitario de Profesiones Gerenciales, Venezuela</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-bold text-sm uppercase tracking-[0.2em] text-foreground mb-12 pt-4 md:pt-8 relative">
               Distinciones
             </h3>
             <div className="space-y-12">
