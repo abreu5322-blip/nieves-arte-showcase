@@ -21,6 +21,8 @@ import P0038 from "@/assets/P0038.jpg";
 import P0039 from "@/assets/P0039.jpg";
 import P0042 from "@/assets/P0042.jpg";
 import P0043 from "@/assets/P0043.jpg";
+import P0044 from "@/assets/P0044.jpg";
+import P0045 from "@/assets/P0045.jpg";
 
 export interface Artwork {
   id: string;
@@ -34,6 +36,8 @@ export interface Artwork {
 }
 
 export const artworks: Artwork[] = [
+  { id: "P0045", title: "Bucle del tiempo", year: 2026, technique: "Pintura al óleo sobre madera", dimensions: "60x45 cm.", series: "Óleo", image: "/assets/P0045.jpg" },
+  { id: "P0044", title: "Sinfonía del movimiento y la brisa", year: 2026, technique: "Pintura al óleo sobre madera", dimensions: "60x45 cm.", series: "Óleo", image: "/assets/P0044.jpg" },
   { id: "P0043", title: "Aceptar la oscuridad", year: 2026, technique: "Pintura al óleo sobre madera", dimensions: "60x45 cm.", series: "Óleo", image: "/assets/P0043.jpg" },
   { id: "P0042", title: "Obsesión", year: 2026, technique: "Pintura al óleo sobre madera", dimensions: "60x45 cm.", series: "Óleo", image: "/assets/P0042.jpg" },
   { id: "P0017", title: "Pensamiento disuelto.", year: 2026, technique: "Pintura al óleo sobre madera", dimensions: "60x45 cm.", series: "Óleo", image: "/assets/P0017.jpg" },
